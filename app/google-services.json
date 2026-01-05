@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "538466025330",
+    "project_id": "gametips-dd5fa",
+    "storage_bucket": "gametips-dd5fa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538466025330:android:ce72f2c6f8ff0600cd27eb",
+        "android_client_info": {
+          "package_name": "com.example.flappybird"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZgXpl-2d-xAqiJvOM8TUgRLqjMuEFQgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538466025330:android:f08eeadbb87465a2cd27eb",
+        "android_client_info": {
+          "package_name": "ipca.example.gametips"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZgXpl-2d-xAqiJvOM8TUgRLqjMuEFQgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
