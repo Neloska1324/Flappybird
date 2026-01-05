@@ -3,7 +3,7 @@ package com.example.flappybird
 import android.content.Context
 import android.graphics.*
 
-class Player(private val context: Context, width: Int, height: Int) {
+class Player(private val context: Context, width: Int, height: Int, private val soundManager: SoundManager? = null) {
     var x = 0f
     var y = 0f
     var velocity = 0f
@@ -58,6 +58,7 @@ class Player(private val context: Context, width: Int, height: Int) {
 
     fun jump() {
         velocity = jumpStrength
+        soundManager?.playSound(SoundManager.SOUND_JUMP)
     }
 
     fun reset(screenWidth: Float, screenHeight: Float) {
