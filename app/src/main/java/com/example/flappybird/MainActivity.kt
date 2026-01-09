@@ -36,6 +36,11 @@ class MainActivity : ComponentActivity() {
                 composable("menu") {
                     MainMenu(navController)
                 }
+
+                composable("difficulty") {
+                    DifficultyScreen(navController)
+                }
+
                 composable("game") {
                     GameScreen()
                 }
