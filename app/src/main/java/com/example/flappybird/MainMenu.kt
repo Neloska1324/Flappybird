@@ -87,7 +87,7 @@ fun MainMenu(navController: NavController) {
             )
 
             Button(
-                onClick = { navController.navigate("game") },
+                onClick = { navController.navigate("difficulty") },
                 modifier = Modifier
                     .size(280.dp, 120.dp)
                     .padding(vertical = 20.dp),

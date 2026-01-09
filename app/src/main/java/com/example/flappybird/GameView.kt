@@ -103,7 +103,10 @@ class GameView(context: Context, val viewModel: MainMenuViewModel) : SurfaceView
         background = Bitmap.createScaledBitmap(background, width, height, false)
         scaledTube = Bitmap.createScaledBitmap(tube, 280, 2240, false)
         scaledTubeUp = rotateBitmap(scaledTube)
-        createTube()
+
+        val prefs = context.getSharedPreferences("flappy_prefs", Context.MODE_PRIVATE)
+        val gameSpeed = prefs.getFloat("game_speed", 1.0f)
+        createTube(gameSpeed)
 
         Log.d("gameview", "surfaceCreated")
         bird.reset(width.toFloat(), height.toFloat())
@@ -173,7 +176,9 @@ class GameView(context: Context, val viewModel: MainMenuViewModel) : SurfaceView
         bird = Player(context, width, height)
         tubes.clear()
 
-        createTube()
+        val prefs = context.getSharedPreferences("flappy_prefs", Context.MODE_PRIVATE)
+        val gameSpeed = prefs.getFloat("game_speed", 1.0f)
+        createTube(gameSpeed)
 
         bird.reset(width.toFloat(), height.toFloat())
         shouldCreateNewTube = false
@@ -210,17 +215,19 @@ class GameView(context: Context, val viewModel: MainMenuViewModel) : SurfaceView
         holderSurface.unlockCanvasAndPost(canvas)
     }
 
-    fun createTube() {
-        tubes.add(Tube(context, this))
+    fun createTube(speed: Float = 1.0f) {
+        tubes.add(Tube(context, this, speed))
         tubes[tubes.count() - 1].initTube(height.toFloat())
-        tubes.add(Tube(context, this))
+        tubes.add(Tube(context, this, speed))
         tubes[tubes.count() - 1].initTubeUp(tubes[tubes.count() - 2].tubeY, height.toFloat())
     }
 
     fun givePoint() {
         points += 1
         soundManager.playSound(SoundManager.SOUND_SCORE)
-        createTube()
+        val prefs = context.getSharedPreferences("flappy_prefs", Context.MODE_PRIVATE)
+        val gameSpeed = prefs.getFloat("game_speed", 1.0f)
+        createTube(gameSpeed)
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
