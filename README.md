@@ -35,3 +35,12 @@ Difficulty System Implementation
 We implemented difficulty selection using Android's SharedPreferences. Then created a DifficultyScreen composable that saves the chosen speed multiplier (0.75, 1.0, or 1.5).
 We modified the GameView class to read this value in surfaceCreated(), restart(), and givePoint() using prefs.getFloat("game_speed", 1.0f) and pass it to a modified Tube constructor. We then updated the Tube.update() method to apply the multiplier.
 
+
+Difficulties: 
+
+One of the most difficult parts we encountered, coding-wise, was trying to implement a fluent creation of the tubes, and then give them diferent speeds according to the level of difficulty. But, in general, we have had more problems with the program Android Studio itself, specially making the game run in the the different emulators. 
+
+Conclusion:
+We found this project very hard to work on it because we use some new technologies and a different program that we were not familiar with, but at the same time it was very complete. We consider that all the screens that we implemented, such as the register/login screen, the game itself or saving data in firebase, made a whole game that can be on the stores.
+
+
